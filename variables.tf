@@ -16,3 +16,12 @@ variable "vpc_additional_cidrs" {
   description = "The list of the additional CIDR of the VPC"
   default     = []
 }
+
+variable "public_subnets" {
+  type = list(object({
+    name              = string
+    cidr              = string
+    availability_zone = string
+  }))
+
+}
